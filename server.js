@@ -1,28 +1,9 @@
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
-import { gql } from 'graphql-tag';
+const { ApolloServer } = require('@apollo/server');
+const { startStandaloneServer } = require('@apollo/server/standalone');
 
 const typeDefs = gql`
-  type Book {
-    title: String
-    author: String
-  }
-
-  type Query {
-    books: [Book]
-  }
+  // schema definition
 `;
-
-const books = [
-  { title: 'Book 1', author: 'Author 1' },
-  { title: 'Book 2', author: 'Author 2' },
-];
-
-const resolvers = {
-  Query: {
-    books: () => books,
-  },
-};
 
 const server = new ApolloServer({
   typeDefs,

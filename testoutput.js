@@ -1,6 +1,17 @@
 query {
-  books {
+  posts {
+    id
     title
-    author
+    content
+    author {
+      name
+      email
+    }
+    comments {
+      content
+      author {
+        name
+      }
+    }
   }
 }
